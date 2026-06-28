@@ -1,0 +1,16 @@
+{
+  "name": "pizarra-colaborativa",
+  "version": "1.0.0",
+  "description": "Pizarra colaborativa en tiempo real con WebSockets (Express + Socket.io)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "socket.io": "^4.8.3"
+  }
+}

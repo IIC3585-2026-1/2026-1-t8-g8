@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Tarea 8 - Web Sockets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="lobby">
+    <div class="lobby-header">
+      <h1>Tarea 8 - Web Sockets</h1>
+      <p>Elige tu grupo para empezar a dibujar</p>
+    </div>
+
+    <div class="groups-grid" id="groups-list">
+    </div>
+
+    <p class="lobby-empty" id="empty-msg" style="display:none;">
+      No hay grupos configurados. Edita la lista en server.js.
+    </p>
+  </div>
+
+  <button class="admin-hidden-link" id="admin-link" aria-label="admin" title=""></button>
+  <script src="js/lobby.js"></script>
+</body>
+</html>

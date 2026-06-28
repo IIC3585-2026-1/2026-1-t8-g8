@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Pizarra Colaborativa · Grupo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="board-page">
+
+    <header class="board-header">
+      <div class="board-header-left">
+        <button class="icon-btn" id="back-btn" aria-label="Volver">←</button>
+        <span id="group-label">Grupo</span>
+      </div>
+      <div class="board-header-right">
+        <span>Usuarios: <span id="user-count">0</span></span>
+        <span id="timer-display">—:--</span>
+      </div>
+    </header>
+
+    <div class="board-canvas-wrap">
+      <canvas id="board"></canvas>
+      <div class="locked-overlay" id="locked-overlay">
+        <strong>Tiempo terminado</strong>
+        <span>Ya no se puede seguir dibujando</span>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="tool-group">
+        <button class="tool-btn active" id="tool-pencil" title="Lápiz">✏️</button>
+        <button class="tool-btn" id="tool-eraser" title="Goma">🧹</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="swatches" id="swatches">
+        <button class="color-swatch active" data-color="#1f2430" style="background:#1f2430"></button>
+        <button class="color-swatch" data-color="#c1543c" style="background:#c1543c"></button>
+        <button class="color-swatch" data-color="#2f5d50" style="background:#2f5d50"></button>
+        <button class="color-swatch" data-color="#3a6ea5" style="background:#3a6ea5"></button>
+        <button class="color-swatch" data-color="#e0a83e" style="background:#e0a83e"></button>
+      </div>
+      <input type="color" id="custom-color" value="#1f2430" title="Color personalizado" />
+
+      <div class="divider"></div>
+
+      <div class="size-group">
+        <span>Grosor</span>
+        <input type="range" id="size-slider" min="2" max="14" value="4" />
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/board.js"></script>
+</body>
+</html>

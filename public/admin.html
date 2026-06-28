@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizarra Colaborativa · Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="admin-page">
+    <header class="admin-topbar">
+      <span class="admin-title">Pizarra Colaborativa — Admin</span>
+
+      <div class="admin-controls">
+        <span id="admin-timer-display">—:--</span>
+        <input type="number" id="minutes-input" value="3" min="1" max="30" title="Minutos" />
+        <button class="admin-btn start" id="start-timer-btn">Iniciar ronda</button>
+        <button class="admin-btn stop" id="stop-timer-btn">Detener ahora</button>
+        <button class="admin-btn reset" id="reset-btn">Reiniciar ronda</button>
+      </div>
+    </header>
+
+    <div class="admin-grid" id="admin-grid">
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
