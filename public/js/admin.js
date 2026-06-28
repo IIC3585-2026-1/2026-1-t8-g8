@@ -1,6 +1,6 @@
 (function () {
-  const LOGICAL_W = 1000;
-  const LOGICAL_H = 700;
+  const LOGICAL_W = 450;
+  const LOGICAL_H = 800;
 
   const grid = document.getElementById('admin-grid');
   const socket = io();

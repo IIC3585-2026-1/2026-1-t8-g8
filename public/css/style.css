@@ -134,7 +134,8 @@ button {
 
 
 .board-page {
-  height: 100vh;
+  position: fixed;
+  inset: 0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -195,15 +196,23 @@ button {
   position: relative;
   flex: 1;
   overflow: hidden;
-  background: var(--white);
+  background: var(--paper-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #board {
   display: block;
-  width: 100%;
+  width: auto;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 450 / 800;
   touch-action: none;
   cursor: crosshair;
+  background: var(--white);
+  box-shadow: 0 0 0 1px var(--line);
 }
 
 .locked-overlay {
@@ -398,10 +407,12 @@ button {
 .admin-grid {
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  align-content: start;
   gap: 14px;
   padding: 16px;
   background: var(--paper-dim);
+  overflow: auto;
 }
 
 .admin-board {
@@ -438,5 +449,4 @@ button {
   width: 100%;
   height: auto;
   display: block;
-  aspect-ratio: 1000 / 700;
 }

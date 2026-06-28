@@ -12,8 +12,8 @@
   // Resolución lógica del canvas: es la misma en board.js y admin.js,
   // así las coordenadas que viajan por el socket sirven para ambos
   // sin necesidad de reescalar.
-  const LOGICAL_W = 1000;
-  const LOGICAL_H = 700;
+  const LOGICAL_W = 450;
+  const LOGICAL_H = 800;
 
   const canvas = document.getElementById('board');
   const ctx = canvas.getContext('2d');
@@ -28,7 +28,7 @@
   let color = '#1f2430';
   let size = 4;
   let locked = false;
-  const ERASER_SIZE = 28;
+  const ERASER_SIZE = 13;
 
   function toCanvasCoords(clientX, clientY) {
     const rect = canvas.getBoundingClientRect();
