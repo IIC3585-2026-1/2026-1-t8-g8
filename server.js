@@ -3,7 +3,7 @@ const http = require('http');
 const path = require('path');
 const { Server } = require('socket.io');
 
-const grupos = ["1", "2", "3", "4", "5", "6"];
+const grupos = ["1", "4", "9", "10", "11"];
 const DURACION_RONDA_DEFAULT = 180; 
 
 const app = express();
