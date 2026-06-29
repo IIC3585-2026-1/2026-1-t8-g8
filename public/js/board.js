@@ -28,7 +28,7 @@
   let color = '#1f2430';
   let size = 4;
   let locked = false;
-  const ERASER_SIZE = 13;
+  const ERASER_SIZE = 15;
 
   function toCanvasCoords(clientX, clientY) {
     const rect = canvas.getBoundingClientRect();
@@ -83,7 +83,6 @@
     last = null;
   }
 
-  // --- Mouse ---
   canvas.addEventListener('mousedown', (e) => {
     const p = toCanvasCoords(e.clientX, e.clientY);
     handleDown(p.x, p.y);
@@ -94,7 +93,6 @@
   });
   window.addEventListener('mouseup', handleUp);
 
-  // --- Touch ---
   canvas.addEventListener('touchstart', (e) => {
     e.preventDefault();
     const t = e.touches[0];
@@ -114,7 +112,6 @@
     handleUp();
   }, { passive: false });
 
-  // --- Toolbar ---
   const pencilBtn = document.getElementById('tool-pencil');
   const eraserBtn = document.getElementById('tool-eraser');
   const colorButtons = document.querySelectorAll('.color-swatch');
@@ -150,11 +147,6 @@
     size = Number(sizeSlider.value);
   });
 
-  document.getElementById('back-btn').addEventListener('click', () => {
-    window.location.href = 'index.html';
-  });
-
-  // --- UI helpers ---
   function updateLockUI() {
     document.getElementById('locked-overlay').classList.toggle('visible', locked);
   }
@@ -170,7 +162,7 @@
     el.textContent = `${m}:${s.toString().padStart(2, '0')}`;
   }
 
-  // --- Socket events ---
+  // Socket events
   socket.emit('join-group', grupo);
 
   socket.on('invalid-group', () => {
